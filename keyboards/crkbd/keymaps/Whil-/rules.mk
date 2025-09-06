@@ -5,10 +5,10 @@ EXTRAKEY_ENABLE = yes
 # Optimization at link time. No downsides except depricated features that won't work.
 LTO_ENABLE = yes
 
-MOUSEKEY_ENABLE = yes
+MOUSEKEY_ENABLE = no
 
 RGBLIGHT_ENABLE = no # This is for RGB *underglow*
-RGB_MATRIX_ENABLE = yes # Enable WS2812 RGB underlight
+RGB_MATRIX_ENABLE = no # Enable WS2812 RGB underlight
 
 NKRO_ENABLE = yes
 OLED_ENABLE = yes
