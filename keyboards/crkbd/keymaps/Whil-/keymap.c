@@ -20,27 +20,28 @@ enum layers {
 };
 
 // Define keys to keep them short in the config below
-#define CTL_TAB  LCTL_T(KC_TAB)
-#define CTL_QUOT RCTL_T(KC_QUOT)
-#define CTL_AE   RCTL_T(SWE_AE)
 
-#define LALT_ENT LALT_T(KC_ENT)
-#define LALT_END LALT_T(KC_END)
-#define LALT_ESC LALT_T(KC_ESC)
-#define LALT_HOM LALT_T(KC_HOME)
-#define RALT_GRV RALT_T(KC_GRV)
-#define RALT_BSL RALT_T(KC_BSLS)
-
-#define GUI_ESC  LGUI_T(KC_ESC)
-#define GUI_QUOT RGUI_T(KC_QUOT)
-#define GUI_AE   RGUI_T(SWE_AE)
-#define GUI_ENT  RGUI_T(KC_ENT)
-
-#define LOW_TAB  LT(_LOWER, KC_TAB)
-#define LOW_BSPC LT(_LOWER, KC_BSPC)
-
-#define RSE_BSPC LT(_RAISE, KC_BSPC)
-#define RSE_SPC  LT(_RAISE, KC_SPC)
+// #define CTL_TAB  LCTL_T(KC_TAB)
+// #define CTL_QUOT RCTL_T(KC_QUOT)
+// #define CTL_AE   RCTL_T(SWE_AE)
+//
+// #define LALT_ENT LALT_T(KC_ENT)
+// #define LALT_END LALT_T(KC_END)
+// #define LALT_ESC LALT_T(KC_ESC)
+// #define LALT_HOM LALT_T(KC_HOME)
+// #define RALT_GRV RALT_T(KC_GRV)
+// #define RALT_BSL RALT_T(KC_BSLS)
+//
+// #define GUI_ESC  LGUI_T(KC_ESC)
+// #define GUI_QUOT RGUI_T(KC_QUOT)
+// #define GUI_AE   RGUI_T(SWE_AE)
+// #define GUI_ENT  RGUI_T(KC_ENT)
+//
+// #define LOW_TAB  LT(_LOWER, KC_TAB)
+// #define LOW_BSPC LT(_LOWER, KC_BSPC)
+//
+// #define RSE_BSPC LT(_RAISE, KC_BSPC)
+// #define RSE_SPC  LT(_RAISE, KC_SPC)
 
 #define RAISE    MO(_RAISE)
 #define LOWER    MO(_LOWER)
