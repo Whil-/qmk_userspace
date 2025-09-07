@@ -512,9 +512,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
   case KC_SPC:
 #ifdef OLED_ENABLE
-    if (record->tap.count) {
-      isJumping = record->event.pressed;
-    }
+    isJumping = record->event.pressed;
     if (isJumping) {
       showedJump = false;
     }
