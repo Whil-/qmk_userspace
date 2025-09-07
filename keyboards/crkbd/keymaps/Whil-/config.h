@@ -17,14 +17,14 @@ This is the C configuration file for the keymap
 // #define EE_HANDS
 
 // Mostly for shift to be able to trigger faster than the tapping term.
-#define TAPPING_TERM 200
+//#define TAPPING_TERM 200
 
 // Enable rapid switch from tap to hold, disables double tap hold auto-repeat.
-#define QUICK_TAP_TERM 0
+//#define QUICK_TAP_TERM 0
 
 // When enabled, typing a mod-tap plus second within term will register as the mod-combo
 // Ref: https://beta.docs.qmk.fm/using-qmk/software-features/tap_hold#permissive-hold
-#define PERMISSIVE_HOLD
+//#define PERMISSIVE_HOLD
 
 #define UNICODE_SELECTED_MODES UNICODE_MODE_MACOS, UNICODE_MODE_WINDOWS, UNICODE_MODE_LINUX
 #define UNICODE_TYPE_DELAY 0
