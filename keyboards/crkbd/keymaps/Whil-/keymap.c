@@ -21,81 +21,42 @@ enum layers {
 
 // Define keys to keep them short in the config below
 
-// #define CTL_TAB  LCTL_T(KC_TAB)
-// #define CTL_QUOT RCTL_T(KC_QUOT)
-// #define CTL_AE   RCTL_T(SWE_AE)
-//
-// #define LALT_ENT LALT_T(KC_ENT)
-// #define LALT_END LALT_T(KC_END)
-// #define LALT_ESC LALT_T(KC_ESC)
-// #define LALT_HOM LALT_T(KC_HOME)
-// #define RALT_GRV RALT_T(KC_GRV)
-// #define RALT_BSL RALT_T(KC_BSLS)
-//
-// #define GUI_ESC  LGUI_T(KC_ESC)
-// #define GUI_QUOT RGUI_T(KC_QUOT)
-// #define GUI_AE   RGUI_T(SWE_AE)
-// #define GUI_ENT  RGUI_T(KC_ENT)
-//
-// #define LOW_TAB  LT(_LOWER, KC_TAB)
-// #define LOW_BSPC LT(_LOWER, KC_BSPC)
-//
-// #define RSE_BSPC LT(_RAISE, KC_BSPC)
-// #define RSE_SPC  LT(_RAISE, KC_SPC)
-
 #define RAISE    MO(_RAISE)
 #define LOWER    MO(_LOWER)
 #define ADJUST   MO(_ADJUST)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // Base
-  [_BASE] = LAYOUT_split_3x6_3(
-  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+  [_BASE] = LAYOUT_split_3x6_3
+  (
        KC_TAB,    KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,                         KC_J,    KC_L,    KC_U,    KC_Y, KC_QUOT, KC_BSPC,
-  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_LCTL,    KC_A,    KC_R,    KC_S,    KC_T,    KC_G,                         KC_M,    KC_N,    KC_E,    KC_I,    KC_O, KC_LGUI,
-  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_LSFT,    KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,                         KC_K,    KC_H, KC_COMM,  KC_DOT, KC_SLSH, KC_RALT,
-  //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          KC_LALT,   RAISE,  KC_SPC,    KC_RSFT,   LOWER,  KC_ENT
-                                      //`--------------------------'  `--------------------------'
+      KC_LSFT,    KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,                         KC_K,    KC_H, KC_COMM,  KC_DOT, KC_SLSH,  KC_ENT,
+                                          KC_LALT,  KC_SPC, KC_LSFT,      LOWER,   RAISE,  KC_RALT
   ),
 
   // Lower
   [_LOWER] = LAYOUT_split_3x6_3(
-  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      _______, KC_EXLM,   KC_AT, KC_HASH, KC_DLR,  KC_PERC,                      KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, _______,
-  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      _______,    KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                         KC_6,    KC_7,    KC_8,    KC_9,    KC_0, _______,
-  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      _______,  KC_GRV, KC_MINS,  KC_EQL, KC_LBRC, KC_RBRC,                      KC_LCBR, KC_RCBR, _______, _______, _______, _______,
-  //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
+      _______,  KC_GRV, KC_EXLM,   KC_AT, KC_HASH,  KC_DLR,                      KC_PSCR,  SWE_AA,  SWE_AE,  SWE_OE, _______, _______,
+      _______, KC_MINS, KC_PERC, KC_CIRC, KC_AMPR, KC_ASTR,                       KC_INS, KC_LEFT, KC_DOWN,   KC_UP, KC_RGHT, _______,
+      _______, KC_BSLS, KC_LPRN, KC_LBRC, KC_RBRC, KC_RPRN,                       KC_DEL, KC_HOME, KC_PGDN, KC_PGUP,  KC_END, _______,
                                           _______, _______, _______,    _______, _______, _______
-                                      //`--------------------------'  `--------------------------'
   ),
 
-  // Raise swedish codes
+  // Raise with swedish codes
   [_RAISE] = LAYOUT_split_3x6_3(
-  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      KC_LCTL, KC_BSLS,  SWE_OE,  SWE_AE, KC_SCLN, _______,
-  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      _______,  SWE_AA, XXXXXXX, XXXXXXX,  KC_ESC, XXXXXXX,                       KC_INS, KC_LEFT, KC_DOWN,   KC_UP, KC_RGHT, _______,
-  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      _______, KC_MPLY, KC_MPRV, KC_MNXT, KC_VOLD, KC_VOLU,                       KC_DEL, KC_HOME, KC_PGDN, KC_PGUP,  KC_END, _______,
-  //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
+      _______, KC_TILD, _______, _______, _______, _______,                      KC_PSLS,   KC_P7,   KC_P8,   KC_P9, KC_PAST, _______,
+      _______, KC_UNDS, _______, KC_SCLN, KC_COLN,  KC_ESC,                      KC_PMNS,   KC_P4,   KC_P5,   KC_P6, KC_PPLS, _______,
+      _______, KC_PIPE, _______, KC_LCBR, KC_RCBR, _______,                        KC_P0,   KC_P1,   KC_P2,   KC_P3, KC_PDOT, KC_PENT,
                                           _______, _______, _______,    _______, _______, _______
   ),
 
   // Adjust
   [_ADJUST] = LAYOUT_split_3x6_3(
-  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      UC_NEXT,   KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,                        KC_F6,   KC_F7,   KC_F8,   KC_F9,  KC_F10, XXXXXXX,
-  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_CAPS,  KC_F11,  KC_F12, XXXXXXX, XXXXXXX, XXXXXXX,                       KC_APP, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      RM_TOGG, RM_NEXT, RM_HUEU, RM_SATU, RM_VALU, RM_SPDU,                      QK_BOOT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-  //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          XXXXXXX, _______, XXXXXXX,    XXXXXXX, _______, XXXXXXX
+      UC_NEXT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX,   KC_F9,  KC_F10,  KC_F11,  KC_F12, XXXXXXX,
+      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                       KC_APP,   KC_F5,   KC_F6,   KC_F7,   KC_F8, XXXXXXX,
+      KC_CAPS, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      QK_BOOT,   KC_F1,   KC_F2,   KC_F3,   KC_F4, XXXXXXX,
+                                          XXXXXXX, XXXXXXX, XXXXXXX,    _______, _______, XXXXXXX
                                       //`--------------------------'  `--------------------------'
   )
 };
@@ -540,9 +501,6 @@ char *swe_win_alt_codes[][2] = {
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
     /* KEYBOARD PET STATUS START */
-  case CTL_TAB:
-  case GUI_QUOT:
-  case CTL_QUOT:
   case KC_LCTL:
   case KC_LGUI:
   case KC_LALT:
@@ -553,7 +511,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     break;
 
   case KC_SPC:
-  case RSE_SPC:
 #ifdef OLED_ENABLE
     if (record->tap.count) {
       isJumping = record->event.pressed;
@@ -592,26 +549,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       set_mods(mods);
     }
     return false;
-    break;
-  case GUI_AE:
-  case CTL_AE:
-    if (record->tap.count && record->event.pressed) {
-      uint8_t mods = get_mods();
-      clear_mods();
-
-      // Send code based on which key was pressed and whether Shift was held.
-      uint8_t shift = mods & (MOD_BIT(KC_LSFT) | MOD_BIT(KC_RSFT));
-      uint8_t unicode_mode = get_unicode_input_mode();
-      if (unicode_mode == UNICODE_MODE_MACOS) {
-        send_string(swe_mac_US_codes[1][(bool)shift]);
-      } else if (unicode_mode == UNICODE_MODE_WINDOWS) {
-        send_string(swe_win_alt_codes[1][(bool)shift]);
-      } else {
-        register_unicode(swe_unicodes[1][(bool)shift]);
-      }
-      set_mods(mods);
-      return false;        // Return false to ignore further processing of key
-    }
     break;
   }
   return true;
