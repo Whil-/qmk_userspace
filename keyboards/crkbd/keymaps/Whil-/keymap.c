@@ -45,9 +45,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   // Raise with swedish codes
   [_RAISE] = LAYOUT_split_3x6_3(
-      _______, KC_TILD, _______, _______, _______, _______,                      KC_PSLS,   KC_P7,   KC_P8,   KC_P9, KC_PAST, _______,
-      _______, KC_UNDS, _______, KC_SCLN, KC_COLN,  KC_ESC,                      KC_PMNS,   KC_P4,   KC_P5,   KC_P6, KC_PPLS, _______,
-      _______, KC_PIPE, _______, KC_LCBR, KC_RCBR, _______,                        KC_P0,   KC_P1,   KC_P2,   KC_P3, KC_PDOT, KC_PENT,
+      _______, KC_TILD, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      KC_PSLS,   KC_P7,   KC_P8,   KC_P9, KC_PAST, _______,
+      _______, KC_UNDS, XXXXXXX, KC_SCLN, KC_COLN,  KC_EQL,                      KC_PMNS,   KC_P4,   KC_P5,   KC_P6, KC_PPLS, _______,
+      _______, KC_PIPE, XXXXXXX, KC_LCBR, KC_RCBR,  KC_ESC,                       KC_P0,   KC_P1,   KC_P2,   KC_P3, KC_PDOT, KC_PENT,
                                           _______, _______, _______,    _______, _______, _______
   ),
 
