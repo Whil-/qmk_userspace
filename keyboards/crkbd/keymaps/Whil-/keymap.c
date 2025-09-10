@@ -39,14 +39,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_LOWER] = LAYOUT_split_3x6_3(
       _______,  KC_GRV, KC_EXLM,   KC_AT, KC_HASH,  KC_DLR,                      KC_PSLS,   KC_P7,   KC_P8,   KC_P9, KC_PAST, _______,
       _______, KC_MINS, KC_PERC, KC_CIRC, KC_AMPR, KC_ASTR,                      KC_PMNS,   KC_P4,   KC_P5,   KC_P6, KC_PPLS, _______,
-      _______, KC_BSLS, KC_SCLN, KC_LBRC, KC_RBRC,  KC_EQL,                      KC_PDOT,   KC_P1,   KC_P2,   KC_P3,   KC_P0, KC_PENT,
+      _______, KC_BSLS, KC_SCLN, KC_LPRN, KC_RPRN,  KC_EQL,                      KC_PDOT,   KC_P1,   KC_P2,   KC_P3,   KC_P0, KC_PENT,
                                           _______, _______, _______,    _______, _______, _______
   ),
 
   // Raise with swedish codes
   [_RAISE] = LAYOUT_split_3x6_3(
       _______, KC_TILD, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      KC_PSCR,  SWE_AA,  SWE_AE,  SWE_OE,  KC_ESC, _______,
-      _______, KC_UNDS, XXXXXXX, KC_LPRN, KC_RPRN, XXXXXXX,                       KC_INS, KC_LEFT, KC_DOWN,   KC_UP, KC_RGHT, _______,
+      _______, KC_UNDS, XXXXXXX, KC_LBRC, KC_RBRC, XXXXXXX,                       KC_INS, KC_LEFT, KC_DOWN,   KC_UP, KC_RGHT, _______,
       _______, KC_PIPE, KC_COLN, KC_LCBR, KC_RCBR, KC_PLUS,                       KC_DEL, KC_HOME, KC_PGDN, KC_PGUP,  KC_END, _______,
                                           _______, _______, _______,    _______, _______, _______
   ),
