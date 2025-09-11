@@ -35,7 +35,7 @@ This is the C configuration file for the keymap
     #define SPLIT_MODS_ENABLE
     #define SPLIT_OLED_ENABLE
     #define SPLIT_WPM_ENABLE
-    #define OLED_FONT_H "glcdfont.c"
+    #define OLED_FONT_H "keyboards/crkbd/keymaps/whil42/glcdfont.c"
     #define OLED_TIMEOUT 30000
 #endif
 
