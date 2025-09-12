@@ -37,7 +37,7 @@ enum layers {
 
 // Define keys to keep them short in the config below
 
-#define RAISE    MO(_RAISE)
+#define RAISE    LT(_RAISE, KC_SPC)
 #define LOWER    MO(_LOWER)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -45,7 +45,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        KC_TAB,    KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,    KC_F,      KC_NO,    KC_J,    KC_L,    KC_U,    KC_Y, KC_QUOT, KC_BSPC,
       KC_LCTL,    KC_A,    KC_R,    KC_S,    KC_T,    KC_G,   KC_NO,      KC_NO,    KC_M,    KC_N,    KC_E,    KC_I,    KC_O,  KC_ENT,
       KC_LGUI,    KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,                         KC_K,    KC_H, KC_COMM,  KC_DOT, KC_SLSH, KC_LSFT,
-                                          KC_LALT, KC_LSFT,  KC_SPC,      LOWER,   RAISE,  KC_LALT
+                                          KC_LALT,  KC_SPC, KC_LSFT,      LOWER,   RAISE,  KC_LALT
   ),
   [_LOWER] = LAYOUT_split_3x6_3_ex2(
       _______,  KC_GRV, KC_EXLM,   KC_AT, KC_HASH,  KC_DLR, _______,    _______, KC_PSLS,   KC_P7,   KC_P8,   KC_P9, KC_PAST, _______,

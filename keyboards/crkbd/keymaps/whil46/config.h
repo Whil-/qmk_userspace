@@ -21,6 +21,16 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #pragma once
 //#define MASTER_LEFT
 
+// Mostly for shift to be able to trigger faster than the tapping term.
+#define TAPPING_TERM 200
+
+// Enable rapid switch from tap to hold, disables double tap hold auto-repeat.
+#define QUICK_TAP_TERM 0
+
+// When enabled, typing a mod-tap plus second within term will register as the mod-combo
+// Ref: https://docs.qmk.fm/tap_hold#permissive-hold
+#define PERMISSIVE_HOLD
+
 #define UNICODE_SELECTED_MODES UNICODE_MODE_MACOS, UNICODE_MODE_WINDOWS, UNICODE_MODE_LINUX
 #define UNICODE_TYPE_DELAY 0
 
