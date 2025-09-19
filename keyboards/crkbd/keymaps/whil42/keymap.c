@@ -24,30 +24,32 @@ enum layers {
 #define RAISE    LT(_RAISE, KC_SPC)
 #define LOWER    MO(_LOWER)
 #define ADJUST   MO(_ADJUST)
+#define GUI_ENT  LGUI_T(KC_ENT)
+#define ALT_ENT  LALT_T(KC_ENT)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // Base
   [_BASE] = LAYOUT_split_3x6_3
   (
        KC_TAB,    KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,                         KC_J,    KC_L,    KC_U,    KC_Y, KC_QUOT, KC_BSPC,
-      KC_LCTL,    KC_A,    KC_R,    KC_S,    KC_T,    KC_G,                         KC_M,    KC_N,    KC_E,    KC_I,    KC_O,  KC_ENT,
+      KC_LCTL,    KC_A,    KC_R,    KC_S,    KC_T,    KC_G,                         KC_M,    KC_N,    KC_E,    KC_I,    KC_O, GUI_ENT,
       KC_LGUI,    KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,                         KC_K,    KC_H, KC_COMM,  KC_DOT, KC_SLSH, KC_LSFT,
-                                          KC_LALT,  KC_SPC, KC_LSFT,      LOWER,   RAISE,  KC_LALT
+                                          ALT_ENT,  KC_SPC, KC_LSFT,      LOWER,   RAISE,  KC_LALT
   ),
 
   // Lower
   [_LOWER] = LAYOUT_split_3x6_3(
       _______,  KC_GRV, KC_EXLM,   KC_AT, KC_HASH,  KC_DLR,                      KC_PSLS,   KC_P7,   KC_P8,   KC_P9, KC_PAST, _______,
       _______, KC_MINS, KC_PERC, KC_CIRC, KC_AMPR, KC_ASTR,                      KC_PMNS,   KC_P4,   KC_P5,   KC_P6, KC_PPLS, _______,
-      _______, KC_BSLS, KC_SCLN, KC_LPRN, KC_RPRN,  KC_EQL,                      KC_PDOT,   KC_P1,   KC_P2,   KC_P3,   KC_P0, KC_PENT,
+      _______, KC_BSLS, XXXXXXX, KC_LPRN, KC_RPRN, XXXXXXX,                      KC_PDOT,   KC_P1,   KC_P2,   KC_P3,   KC_P0, KC_PENT,
                                           _______, _______, _______,    _______, _______, _______
   ),
 
   // Raise with swedish codes
   [_RAISE] = LAYOUT_split_3x6_3(
       _______, KC_TILD, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      KC_PSCR,  SWE_AA,  SWE_AE,  SWE_OE,  KC_ESC, _______,
-      _______, KC_UNDS, XXXXXXX, KC_LBRC, KC_RBRC, XXXXXXX,                       KC_INS, KC_LEFT, KC_DOWN,   KC_UP, KC_RGHT, _______,
-      _______, KC_PIPE, KC_COLN, KC_LCBR, KC_RCBR, KC_PLUS,                       KC_DEL, KC_HOME, KC_PGDN, KC_PGUP,  KC_END, _______,
+      _______, KC_UNDS, KC_SCLN, KC_COLN,  KC_EQL, KC_PLUS,                       KC_INS, KC_LEFT, KC_DOWN,   KC_UP, KC_RGHT, _______,
+      _______, KC_PIPE, KC_LCBR, KC_LBRC, KC_RBRC, KC_RCBR,                       KC_DEL, KC_HOME, KC_PGDN, KC_PGUP,  KC_END, _______,
                                           _______, _______, _______,    _______, _______, _______
   ),
 
