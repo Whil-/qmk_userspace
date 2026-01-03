@@ -6,9 +6,6 @@ enum custom_keycodes {
   SWE_AA = SAFE_RANGE
  ,SWE_AE
  ,SWE_OE
- ,SWE_AAU
- ,SWE_AEU
- ,SWE_OEU
 };
 
 // Each layer gets a name for readability, which is then used in the keymap matrix below.
@@ -25,9 +22,9 @@ enum layers {
 
 // Define keys to keep them short in the config below
 
-#define RAISE    LT(_RAISE, KC_SPC)
 #define LOWER    MO(_LOWER)
-#define UNRAISE  MO(_UNRAISE)
+#define RAISE    LT(_RAISE, KC_SPC)
+#define UNRAISE  LT(_UNRAISE, KC_SPC)
 #define ADJUST   MO(_ADJUST)
 #define GUI_ENT  LGUI_T(KC_ENT)
 #define ALT_SPC  LALT_T(KC_SPC)
@@ -55,14 +52,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       _______, KC_PSCR, XXXXXXX, XXXXXXX, KC_LCBR, KC_RCBR,                       KC_INS,  SWE_AA,  SWE_AE,  SWE_OE, XXXXXXX, _______,
       _______, XXXXXXX, XXXXXXX, XXXXXXX, KC_LBRC, KC_RBRC,                       KC_DEL, KC_LEFT, KC_DOWN,   KC_UP, KC_RGHT, _______,
       _______, KC_TILD, KC_PIPE, KC_COLN, KC_UNDS, KC_PLUS,                       KC_ESC, KC_HOME, KC_PGDN, KC_PGUP,  KC_END, _______,
-                                          _______, _______, UNRAISE,    _______, _______, _______
+                                          _______, UNRAISE, _______,    _______, _______, _______
   ),
 
   // Raise-downshifted to lower
   [_UNRAISE] = LAYOUT_split_3x6_3(
-      _______, KC_EXLM,   KC_AT, KC_HASH,  KC_DLR, KC_PERC,                      KC_PPLS, SWE_AAU, SWE_AEU, SWE_OEU, XXXXXXX, _______,
-      _______, KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN,                      KC_PDOT, KC_LEFT, KC_DOWN,   KC_UP, KC_RGHT, _______,
-      _______,  KC_GRV, KC_BSLS, KC_SCLN, KC_MINS,  KC_EQL,                      KC_PMNS, KC_HOME, KC_PGDN, KC_PGUP,  KC_END, _______,
+      _______, KC_EXLM,   KC_AT, KC_HASH,  KC_DLR, KC_PERC,                       KC_INS,  SWE_AA,  SWE_AE,  SWE_OE, XXXXXXX, _______,
+      _______, KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN,                       KC_DEL, KC_LEFT, KC_DOWN,   KC_UP, KC_RGHT, _______,
+      _______,  KC_GRV, KC_BSLS, KC_SCLN, KC_MINS,  KC_EQL,                       KC_ESC, KC_HOME, KC_PGDN, KC_PGUP,  KC_END, _______,
                                           _______, _______, _______,    _______, _______, _______
   ),
 
@@ -563,30 +560,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     return false;
     break;
     /* Custom SWEDISH Keycodes END */
-
-    /* Custom Uppercase SWEDISH Keycodes START */
-  case SWE_AAU:
-  case SWE_AEU:
-  case SWE_OEU:
-    if (record->event.pressed) {
-      uint8_t mods = get_mods();
-      clear_mods();
-
-      // Send code based on which key was pressed and whether Shift was held.
-      uint16_t index = keycode - SWE_AAU;
-      uint8_t unicode_mode = get_unicode_input_mode();
-      if (unicode_mode == UNICODE_MODE_MACOS) {
-        send_string(swe_mac_US_codes[index][1]);
-      } else if (unicode_mode == UNICODE_MODE_WINDOWS) {
-        send_string(swe_win_alt_codes[index][1]);
-      } else {
-        register_unicode(swe_unicodes[index][1]);
-      }
-      set_mods(mods);
-    }
-    return false;
-    break;
-    /* Custom Uppercase SWEDISH Keycodes END */
   }
   return true;
 }
