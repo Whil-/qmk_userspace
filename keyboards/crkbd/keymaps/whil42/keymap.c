@@ -16,60 +16,43 @@ enum layers {
   _BASE
  ,_LOWER
  ,_RAISE
- ,_UNRAISE
  ,_ADJUST
 };
 
 // Define keys to keep them short in the config below
-
-#define LOWER    MO(_LOWER)
+#define LOWER    LT(_LOWER, KC_MINS)
 #define RAISE    LT(_RAISE, KC_SPC)
-#define UNRAISE  LT(_UNRAISE, KC_SPC)
-#define ADJUST   MO(_ADJUST)
-#define GUI_ENT  LGUI_T(KC_ENT)
-#define ALT_SPC  LALT_T(KC_SPC)
+#define GUI_SPC  LGUI_T(KC_SPC)
+#define GUI_GRV  LGUI_T(KC_GRV)
+#define ALT_QUO  LALT_T(KC_QUOT)
+#define SFT_EQL  LSFT_T(KC_EQL)
+#define ALT_ENT  LALT_T(KC_ENT)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-  // Base
-  [_BASE] = LAYOUT_split_3x6_3
-  (
-       KC_TAB,    KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,                         KC_J,    KC_L,    KC_U,    KC_Y, KC_QUOT, KC_BSPC,
-      KC_LCTL,    KC_A,    KC_R,    KC_S,    KC_T,    KC_G,                         KC_M,    KC_N,    KC_E,    KC_I,    KC_O, GUI_ENT,
-      KC_LGUI,    KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,                         KC_K,    KC_H, KC_COMM,  KC_DOT, KC_SLSH, KC_LSFT,
-                                           KC_ENT, ALT_SPC, KC_LSFT,      LOWER,   RAISE,  KC_LALT
+  [_BASE] = LAYOUT_split_3x6_3(
+       KC_TAB,    KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,                         KC_J,    KC_L,    KC_U,    KC_Y, KC_SCLN, KC_BSPC,
+      KC_LCTL,    KC_A,    KC_R,    KC_S,    KC_T,    KC_G,                         KC_M,    KC_N,    KC_E,    KC_I,    KC_O, ALT_QUO,
+      GUI_GRV,    KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,                         KC_K,    KC_H, KC_COMM,  KC_DOT, KC_SLSH,  KC_ENT,
+                                          ALT_ENT, GUI_SPC, KC_LSFT,      LOWER,   RAISE,  SFT_EQL
   ),
-
-  // Lower
   [_LOWER] = LAYOUT_split_3x6_3(
-      _______, KC_EXLM,   KC_AT, KC_HASH,  KC_DLR, KC_PERC,                      KC_PPLS,   KC_P7,   KC_P8,   KC_P9, KC_PAST, _______,
-      _______, KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN,                      KC_PDOT,   KC_P4,   KC_P5,   KC_P6,   KC_P0, _______,
-      _______,  KC_GRV, KC_BSLS, KC_SCLN, KC_MINS,  KC_EQL,                      KC_PMNS,   KC_P1,   KC_P2,   KC_P3, KC_PSLS, _______,
+      _______, KC_EXLM,   KC_AT, KC_HASH,  KC_DLR, KC_PERC,                       KC_EQL,   KC_P7,   KC_P8,   KC_P9, KC_SCLN, _______,
+      _______, KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN,                      KC_PDOT,   KC_P4,   KC_P5,   KC_P6,   KC_P0, ALT_QUO,
+      _______, KC_UNDS, KC_LCBR, KC_RCBR, KC_LBRC, KC_RBRC,                      KC_MINS,   KC_P1,   KC_P2,   KC_P3, KC_SLSH, _______,
                                           _______, _______, _______,    _______, _______, _______
   ),
-
-  // Raise with swedish codes
   [_RAISE] = LAYOUT_split_3x6_3(
-      _______, KC_PSCR, XXXXXXX, XXXXXXX, KC_LCBR, KC_RCBR,                       KC_INS,  SWE_AA,  SWE_AE,  SWE_OE, XXXXXXX, _______,
-      _______, XXXXXXX, XXXXXXX, XXXXXXX, KC_LBRC, KC_RBRC,                       KC_DEL, KC_LEFT, KC_DOWN,   KC_UP, KC_RGHT, _______,
-      _______, KC_TILD, KC_PIPE, KC_COLN, KC_UNDS, KC_PLUS,                       KC_ESC, KC_HOME, KC_PGDN, KC_PGUP,  KC_END, _______,
-                                          _______, UNRAISE, _______,    _______, _______, _______
-  ),
-
-  // Raise-downshifted to lower
-  [_UNRAISE] = LAYOUT_split_3x6_3(
-      _______, KC_EXLM,   KC_AT, KC_HASH,  KC_DLR, KC_PERC,                       KC_INS,  SWE_AA,  SWE_AE,  SWE_OE, XXXXXXX, _______,
-      _______, KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN,                       KC_DEL, KC_LEFT, KC_DOWN,   KC_UP, KC_RGHT, _______,
-      _______,  KC_GRV, KC_BSLS, KC_SCLN, KC_MINS,  KC_EQL,                       KC_ESC, KC_HOME, KC_PGDN, KC_PGUP,  KC_END, _______,
+      _______, KC_PSCR,   KC_F9,  KC_F10,  KC_F11,  KC_F12,                       KC_INS,  SWE_AA,  SWE_AE,  SWE_OE, XXXXXXX, _______,
+      _______, KC_BSLS,   KC_F5,   KC_F6,   KC_F7,   KC_F8,                       KC_DEL, KC_LEFT, KC_DOWN,   KC_UP, KC_RGHT, KC_LALT,
+      KC_LGUI, KC_PIPE,   KC_F1,   KC_F2,   KC_F3,   KC_F4,                       KC_ESC, KC_HOME, KC_PGDN, KC_PGUP,  KC_END, _______,
                                           _______, _______, _______,    _______, _______, _______
   ),
-
-  // Adjust
   [_ADJUST] = LAYOUT_split_3x6_3(
-       UC_MAC, UC_LINX,  UC_WIN, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX,   KC_F9,  KC_F10,  KC_F11,  KC_F12, XXXXXXX,
-      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                       KC_APP,   KC_F5,   KC_F6,   KC_F7,   KC_F8, XXXXXXX,
-      KC_CAPS, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      QK_BOOT,   KC_F1,   KC_F2,   KC_F3,   KC_F4, XXXXXXX,
-                                          XXXXXXX, XXXXXXX, XXXXXXX,    _______, _______, XXXXXXX
-  )
+       UC_MAC, UC_LINX,  UC_WIN, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                       KC_APP, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+      KC_CAPS, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      QK_BOOT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+                                          XXXXXXX, _______, XXXXXXX,    XXXXXXX, _______, XXXXXXX
+                                     )
 };
 
 #ifdef OLED_ENABLE

@@ -36,7 +36,6 @@ enum layers {
 };
 
 // Define keys to keep them short in the config below
-
 #define LOWER    LT(_LOWER, KC_MINS)
 #define RAISE    LT(_RAISE, KC_SPC)
 #define GUI_SPC  LGUI_T(KC_SPC)
