@@ -42,14 +42,13 @@ enum layers {
 #define GUI_GRV  LGUI_T(KC_GRV)
 #define ALT_QUO  LALT_T(KC_QUOT)
 #define SFT_EQL  LSFT_T(KC_EQL)
-#define ALT_ENT  LALT_T(KC_ENT)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_BASE] = LAYOUT_split_3x6_3_ex2(
        KC_TAB,    KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,   KC_NO,      KC_NO,    KC_J,    KC_L,    KC_U,    KC_Y, KC_SCLN, KC_BSPC,
       KC_LCTL,    KC_A,    KC_R,    KC_S,    KC_T,    KC_G,  QK_REP,     QK_REP,    KC_M,    KC_N,    KC_E,    KC_I,    KC_O, ALT_QUO,
       GUI_GRV,    KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,                         KC_K,    KC_H, KC_COMM,  KC_DOT, KC_SLSH,  KC_ENT,
-                                          ALT_ENT, GUI_SPC, KC_LSFT,      LOWER,   RAISE,  SFT_EQL
+                                          KC_LALT, GUI_SPC, KC_LSFT,      LOWER,   RAISE,  SFT_EQL
   ),
   [_LOWER] = LAYOUT_split_3x6_3_ex2(
       _______, KC_EXLM,   KC_AT, KC_HASH,  KC_DLR, KC_PERC, _______,    _______,  KC_EQL,   KC_P7,   KC_P8,   KC_P9, KC_SCLN, _______,
