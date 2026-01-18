@@ -51,9 +51,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                           KC_LALT, GUI_SPC, KC_LSFT,      LOWER,   RAISE,  SFT_EQL
   ),
   [_LOWER] = LAYOUT_split_3x6_3_ex2(
-      _______, KC_EXLM,   KC_AT, KC_HASH,  KC_DLR, KC_PERC, _______,    _______,  KC_EQL,   KC_P7,   KC_P8,   KC_P9, KC_SCLN, _______,
-      _______, KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, _______,    _______, KC_PDOT,   KC_P4,   KC_P5,   KC_P6,   KC_P0, ALT_QUO,
-      _______, KC_UNDS, KC_LCBR, KC_RCBR, KC_LBRC, KC_RBRC,                      KC_MINS,   KC_P1,   KC_P2,   KC_P3, KC_SLSH, _______,
+      _______, KC_EXLM,   KC_AT, KC_HASH,  KC_DLR, KC_PERC, _______,    _______,  KC_EQL,    KC_7,    KC_8,    KC_9, KC_SCLN, _______,
+      _______, KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, _______,    _______,  KC_DOT,    KC_4,    KC_5,    KC_6,    KC_0, ALT_QUO,
+      _______, KC_UNDS, KC_LCBR, KC_RCBR, KC_LBRC, KC_RBRC,                      KC_MINS,    KC_1,    KC_2,    KC_3, KC_SLSH, _______,
                                           _______, _______, _______,    _______, _______, _______
   ),
   [_RAISE] = LAYOUT_split_3x6_3_ex2(
