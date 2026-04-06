@@ -476,19 +476,20 @@ char *swe_mac_US_codes[][2] = {
 };
 
 // Codes that work on windows without any custom changes in OS or extra software
+// See: https://en.wikipedia.org/wiki/Alt_code
 char *swe_win_alt_codes[][2] = {
     {
-        SS_RALT(SS_TAP(X_KP_1)SS_TAP(X_KP_3)SS_TAP(X_KP_4)), // Alt+134 → å
-        SS_RALT(SS_TAP(X_KP_1)SS_TAP(X_KP_4)SS_TAP(X_KP_3)), // Alt+143 → Å
+        SS_RALT(SS_TAP(X_KP_0)SS_TAP(X_KP_2)SS_TAP(X_KP_2)SS_TAP(X_KP_9)), // Alt+134, Alt+0229 → å
+        SS_RALT(SS_TAP(X_KP_0)SS_TAP(X_KP_1)SS_TAP(X_KP_9)SS_TAP(X_KP_7)), // Alt+143, Alt+0197 → Å
 
     },
     {
-        SS_RALT(SS_TAP(X_KP_1)SS_TAP(X_KP_3)SS_TAP(X_KP_2)), // Alt+132 → ä
-        SS_RALT(SS_TAP(X_KP_1)SS_TAP(X_KP_4)SS_TAP(X_KP_2)), // Alt+142 → Ä
+        SS_RALT(SS_TAP(X_KP_0)SS_TAP(X_KP_2)SS_TAP(X_KP_2)SS_TAP(X_KP_8)), // Alt+132, Alt+0228 → ä
+        SS_RALT(SS_TAP(X_KP_0)SS_TAP(X_KP_1)SS_TAP(X_KP_9)SS_TAP(X_KP_6)), // Alt+142, Alt+0196 → Ä
     },
     {
-        SS_RALT(SS_TAP(X_KP_1)SS_TAP(X_KP_4)SS_TAP(X_KP_8)), // Alt+148 → ö
-        SS_RALT(SS_TAP(X_KP_1)SS_TAP(X_KP_5)SS_TAP(X_KP_3)), // Alt+153 → Ö
+        SS_RALT(SS_TAP(X_KP_0)SS_TAP(X_KP_2)SS_TAP(X_KP_4)SS_TAP(X_KP_6)), // Alt+148, Alt+0246 → ö
+        SS_RALT(SS_TAP(X_KP_0)SS_TAP(X_KP_2)SS_TAP(X_KP_1)SS_TAP(X_KP_4)), // Alt+153, Alt+0214 → Ö
     },
 };
 
